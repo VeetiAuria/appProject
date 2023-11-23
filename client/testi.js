@@ -1,3 +1,13 @@
+// Loaderille toiminnot
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+    
+    loader.classList.add("loader--hidden");
+
+    loader.addEventListener("transitioned", () => {
+        document.body.removeChild(loader);
+    });
+});
 function submitAnswers() {
     // Hae arvot lomakkeesta
     const answer1 = document.getElementById('answer1').value;
@@ -14,4 +24,3 @@ function submitAnswers() {
     // Ohjaa käyttäjä index.html-sivulle
     window.location.href = 'index.html';
 }
-
