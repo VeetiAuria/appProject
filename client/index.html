@@ -1,20 +1,23 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Duunappi</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div id="app">
-      <div id="chat_container"></div>
 
-      <form>
-        <textarea name="prompt" rows="1" cols="1" placeholder="Kerro vahvuuksistasi"></textarea>
-        <button type="submit"><img src="assets/send.svg"/></button>
-      </form>
-    </div>
-    <script type="module" src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duunappi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="top-bar">
+    <img src="duunisovellus logo_valmis.png" alt="Logo" class="logo">
+  </div>
+
+
+  <div id="aiResponse">Processing response...</div>
+  <script src="answers.js"></script>
+
+  <button id="resetButton">Reset and Go Back</button>
+</body>
+
 </html>
