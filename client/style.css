@@ -39,6 +39,12 @@ body {
   scroll-behavior: smooth;
 }
 
+@media (min-width: 360px) {
+  #chat_container {
+      width: 100%; /* Adjust if needed for larger screens */
+  }
+}
+
 /* piilottaa scrollbar:in */
 #chat_container::-webkit-scrollbar {
   display: none;
@@ -135,4 +141,36 @@ button {
 form img {
   width: 30px;
   height: 30px;
+}
+
+
+.top-bar {
+  width: 100%;
+  background-color: #010427; 
+  padding: 10px 0; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.logo {
+  height: 50px; /* Adjust the size of your logo */
+  width: auto; /* Keeps the aspect ratio of the logo */
+}
+
+
+
+#resetButton {
+  padding: 10px 20px; /* Padding for size */
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Cursor changes to a hand icon */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#resetButton:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
 }

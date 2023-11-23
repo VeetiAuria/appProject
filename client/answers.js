@@ -36,3 +36,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('aiResponse').innerText = 'No prompt provided.';
     }
 });
+
+
+//reset buttonin logiikka
+document.addEventListener('DOMContentLoaded', () => {
+ 
+
+    // lisätään event listener buttonille
+    document.getElementById('resetButton').addEventListener('click', () => {
+        // vie takaisin testi.html
+        window.location.href = 'testi.html';
+    });
+});
