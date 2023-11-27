@@ -22,7 +22,6 @@ app.get('/', async (req, res) => {
     })
 });
 
-
 app.post('/', async (req, res) => {
     try {
         const prompt = req.body.prompt;
@@ -51,3 +50,4 @@ app.post('/', async (req, res) => {
 // Sovellus laitetaan kuuntelemaan määriteltyä porttia. Jos PORT-ympäristömuuttujaa ei ole asetettu, käytetään oletusarvoa 5000.
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port http://localhost:${port}`));
+
