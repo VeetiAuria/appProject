@@ -5,176 +5,182 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Alegreya Sans", sans-serif;
+
 }
 
 body {
-  background: #343541;
+  background: #ffffff;
+  color: #fdf8f8;
+
+
 }
 
-#app {
-  width: 100vw;
-  height: 100vh;
-  background: #343541;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
 
-#chat_container {
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
 
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 
-  padding-bottom: 20px;
-  scroll-behavior: smooth;
-}
 
-@media (min-width: 360px) {
-  #chat_container {
-      width: 100%; /* Adjust if needed for larger screens */
-  }
-}
 
-/* piilottaa scrollbar:in */
-#chat_container::-webkit-scrollbar {
-  display: none;
-}
 
-.wrapper {
-  width: 100%;
-  padding: 15px;
-}
-
-.ai {
-  background: #40414F;
-}
-
-.chat {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.profile {
-  width: 36px;
-  height: 36px;
+button {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
   border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: fixed;
+  /* Fixed position relative to the viewport */
+  bottom: 20px;
+  /* Position 20px from the bottom */
+  left: 20px;
+  /* Position 20px from the right */
+  z-index: 1000;
+  /* Ensure it's above other elements */
+}
 
-  background: #5436DA;
+button:hover {
+  background-color: #45a049;
+}
 
+.top-bar {
+  width: 100%;
+  background-color: #010427;
+  padding: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.ai .profile {
-  background: #10a37f;
+.logo {
+  height: 50px;
+  width: auto;
 }
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+
+  .wrapper,
+  form {
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+
+/* Additional Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+  #resetButton {
+    bottom: 10px;
+    /* Closer to edge on smaller screens */
+    right: 10px;
+  }
+}
+
+
+
+
+
+.answersContainer {
+  width: 80%;
+  /* Adjust the width as needed */
+  max-width: 800px;
+  /* Maximum width */
+  margin: 20px auto;
+  /* Centers the container */
+  padding: 15px;
+  /* Padding inside the container */
+  background-color: #f9f9f9;
+  /* Light background color */
+  border: 1px solid #ccc;
+  /* Border for the container */
+  border-radius: 4px;
+  /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Optional: Adds a subtle shadow */
+  overflow-y: auto;
+  /* Adds scroll for overflow */
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+
+
+
+
+
+}
+
+.bot-name {
+  font-size: 14px;
+  /* Choose an appropriate font size */
+  font-weight: bold;
+  color: #000000;
+  /* Text color */
+
+
+}
+
+
+
+#aiResponse {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #e8e8e8;
+  /* Light background for visibility */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Slightly larger font for readability */
+  color: #333;
+  /* Darker text for contrast */
+  word-wrap: break-word;
+  /* Ensure long words do not overflow */
+  max-width: 100%;
+  /* Full width of its parent container */
+  height: auto;
+  /* Height to fit content */
+
+
+
+}
+
+
+.profile {
+  display: flex;
+  /* Aligns children (image and name) in a row */
+  align-items: center;
+  /* Centers them vertically */
+  margin-top: 30px;
+  /* Adjust as needed */
+}
+
+
+
+
+
+
+
 
 .profile img {
-  width: 60%;
-  height: 60%;
+  width: 66px;
+  /* Adjust size as needed */
+
+  height: 66px;
+  /* Adjust size as needed */
+
   object-fit: contain;
+  /* Keeps the aspect ratio of the image */
+
+  border-radius: 30%;
+
+  /* Makes the image circular */
+  margin-right: 10px;
+  /* Space between the image and the name */
 }
-
-.message {
-  flex: 1;
-  color: #dcdcdc;
-  font-size: 20px;
-  max-width: 100%;
-  overflow-x: scroll;
-  white-space: pre-wrap; 
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* hides scrollbar */
-.message::-webkit-scrollbar {
-  display: none;
-}
-
-form {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 10px;
-  background: #40414F;
-
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-
-textarea {
-  width: 100%;
-  color: #fff;
-  font-size: 18px;
-  padding: 10px;
-  background: transparent;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-}
-
-button {
-  outline: 0;
-  border: 0;
-  cursor: pointer;
-  background: transparent;
-}
-
-form img {
-  width: 30px;
-  height: 30px;
-}
-
-
-.top-bar {
-  width: 100%;
-  background-color: #010427; 
-  padding: 10px 0; 
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-}
-
-.logo {
-  height: 50px; /* Adjust the size of your logo */
-  width: auto; /* Keeps the aspect ratio of the logo */
-}
-
-
-
-#resetButton {
-  padding: 10px 20px; /* Padding for size */
-  background-color: #4CAF50; /* Green background */
-  color: white; /* White text */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 16px; /* Font size */
-  cursor: pointer; /* Cursor changes to a hand icon */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-#resetButton:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
-}
-
-
-
-
