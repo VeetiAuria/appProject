@@ -25,11 +25,16 @@ app.get('/', async (req, res) => {
 app.post('/', async (req, res) => {
     try {
         const prompt = req.body.prompt;
+        const instruction = `
+        Your job is to find a good job for the user based on their answers. Provide 8 job descriptions in your answer, ranking them so that the first is the most relevant, and the eighth is the least relevant. If the user provides inappropriate, self-harm, drug-related, sexual, racist, slurs, or any non-job-related answers, DO NOT respond to them. Guide the users to answer properly if the answers are not valid. Answer in the same language what user has inserted in the answer.
+        `;
 
         const chatCompletion = await openai.chat.completions.create({
-            messages: [{ role: "user", content: prompt }],
+            messages: [
+                { role: "system", content: instruction },
+                { role: "user", content: prompt }],
             model: "gpt-3.5-turbo",
-            max_tokens: 50,
+            max_tokens: 250,
         });
 
         if (chatCompletion.choices && chatCompletion.choices.length > 0 && chatCompletion.choices[0].message.content) {
