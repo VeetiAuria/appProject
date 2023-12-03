@@ -1,31 +1,28 @@
-
 document.addEventListener('DOMContentLoaded', async () => {
-    // Retrieve the stored answers
+    // Hae tallennetut vastaukset
     const answer1 = localStorage.getItem('answer1');
     const answer2 = localStorage.getItem('answer2');
     const answer3 = localStorage.getItem('answer3');
     const answer4 = localStorage.getItem('answer4');
 
-   // Yhdistä vihjeet yhdeksi merkkijonoksi tai käsittele tarvittaessa
+    // Yhdistä vastaukset yhdeksi merkkijonoksi
     const combinedPrompt = `${answer1}\n${answer2}\n${answer3}\n${answer4}`;
 
-    // Tarkista, onko käsiteltävää vihjettä
     if (combinedPrompt.trim() !== '') {
-         // Tee pyyntö backendiin vihjeen käsittelyä varten
+        // Lähetä pyyntö backendiin
         try {
             const response = await fetch('http://localhost:5000', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ prompt: combinedPrompt })
             });
 
             if (response.ok) {
                 const responseData = await response.json();
-                const answer = responseData.bot.trim(); 
-                // Näytä vastaus sivulla
-                document.getElementById('aiResponse').innerText = answer;
+                const answer = responseData.bot.trim();
+                // Näytä vastaus kirjain kerrallaan
+                const aiResponseElement = document.getElementById('aiResponse');
+                
             } else {
                 console.error('Error from server:', await response.text());
             }
@@ -37,14 +34,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-
-//reset buttonin logiikka
+// Reset-napin logiikka
 document.addEventListener('DOMContentLoaded', () => {
- 
-
-    // lisätään event listener buttonille
     document.getElementById('resetButton').addEventListener('click', () => {
-        // vie takaisin testi.html
-        window.location.href = 'testi.html';
+        window.location.href = 'testi.html'; // Palaa takaisin testi.html-sivulle
     });
 });

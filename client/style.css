@@ -101,7 +101,7 @@ button:hover {
   /* Light background color */
   border: 1px solid #ccc;
   /* Border for the container */
-  border-radius: 4px;
+  border-radius: 15px;
   /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   /* Optional: Adds a subtle shadow */

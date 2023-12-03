@@ -1,53 +1,62 @@
 body {
     font-family: "Arial", sans-serif;
-    background-color: #f4f4f4;
+    background-color: #010427;
     margin: 0;
 }
-  
+
 header {
     background-color: #010427;
-    padding: 10px 0;
+
     text-align: center;
 }
-  
+
 .top-bar {
+    border-bottom: 5px solid #dec04b;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 0;
 }
-  
+
 .logo {
     height: 50px;
     width: auto;
 }
-  
+
 h1 {
-    color: #333;
+    color: #ffffff;
     text-align: center;
     margin: 20px 0;
 }
-  
+
 .instructions {
-    color: #555;
+    color: #ffffff;
     text-align: center;
     margin-bottom: 30px;
 }
-  
+
 #answerForm {
-    max-width: 400px;
+    max-width: 370px;
+    height: 630px;
     margin: 0 auto;
     background: #fff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+
 }
-  
+
 label {
     display: block;
     margin-bottom: 8px;
     color: #333;
 }
-  
+
 input {
     width: 100%;
     padding: 8px;
@@ -56,9 +65,9 @@ input {
     border-radius: 4px;
     box-sizing: border-box;
 }
-  
+
 button {
-    background-color: #010427;
+    background-color: #dec04b;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -67,9 +76,9 @@ button {
     font-size: 16px;
     transition: background-color 0.3s;
 }
-  
+
 button:hover {
-    background-color: #000000;
+    background-color: #25274f;
 }
 
 /* preloader.css */
@@ -85,14 +94,14 @@ button:hover {
     justify-content: center;
     background: #000000;
     transition: opacity 2s, visibility 2s;
-  }
-  
-  .loader--hidden {
+}
+
+.loader--hidden {
     opacity: 0;
     visibility: hidden;
-  }
-  
-  .loader::after {
+}
+
+.loader::after {
     content: "";
     width: 75px;
     height: 75px;
@@ -100,27 +109,35 @@ button:hover {
     border-top-color: #010427;
     border-radius: 50%;
     animation: loading 1s ease infinite;
-  }
-  
-  @keyframes loading {
-    from {
-      transform: rotate(0turn);
-    }
-    to {
-      transform: rotate(1turn);
-    }
-  }  
+}
 
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
 
@@ -128,10 +145,12 @@ button:hover {
 /*Modalin ja close buttonin css(pop up mikä tulee jos käyttäjä ei vastaa kaikkiin kohtiin)*/
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 40%; /* Could be more or less, depending on screen size */
+    width: 40%;
+    /* Could be more or less, depending on screen size */
 }
 
 .close-button {
@@ -143,7 +162,9 @@ button:hover {
 
 .close-button:hover,
 .close-button:focus {
-    color: black;
+
+    color: rgb(255, 0, 0);
     text-decoration: none;
-    cursor: pointer;
+
+
 }

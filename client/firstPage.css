@@ -1,10 +1,11 @@
-/* Basic styling for the frontpage */
+
 body {
     background-color: #010427;
     /* Sets the background color to purple */
     background-image: url('tausta_sovellukseen2.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 
     color: white;
     /* Sets the text color to white for better visibility */
@@ -22,7 +23,8 @@ body {
 
 /* Styling for the logo */
 #logo {
-    width: 150px;
+    width: 180px;
+    height: 180px;
     /* Adjust as needed */
     margin: 0 auto;
     /* Centers the logo */
