@@ -13,26 +13,22 @@
     <img src="logo_sovellus_valmis.png" alt="Logo" class="logo">
   </div>
 
-
   <div class="answersContainer">
-    
-    <div class="profile ai"> 
+    <div class="profile ai">
       <img src="logo_sovellus_valmis.png" alt="AI Bot">
       <span class="bot-name">DuuniBot</span>
-  </div>
-  
+    </div>
     <div id="aiResponse">
-      <!-- AI response text will appear here -->
+      <div id="loadingIndicator" style="display: none;">
+        <span>Analysoidaan vastauksiasi</span>
+        <span class="dots"></span>
+      </div>
     </div>
   </div>
 
-
-
-
- 
   <script src="answers.js"></script>
-
   <button id="resetButton">Reset and Go Back</button>
 </body>
 
-</html> 
+</html>
+

@@ -26,7 +26,7 @@ app.post('/', async (req, res) => {
     try {
         const prompt = req.body.prompt;
         const instruction = `
-        Your job is to find a good job for the user based on their answers. Provide 1 job descriptions in your answer, ranking them so that the first is the most relevant, and the eighth is the least relevant. If the user provides inappropriate, self-harm, drug-related, sexual, racist, slurs, or any non-job-related answers, DO NOT respond to them. Guide the users to answer properly if the answers are not valid. Answer in the same language what user has inserted in the answer.
+        Your job is to find a good job for the user based on their answers. Provide 5 job descriptions in your answer, ranking them so that the first is the most relevant, and the fifth is the least relevant. If the user provides inappropriate, self-harm, drug-related, sexual, racist, slurs, or any non-job-related answers, DO NOT respond to them. Guide the users to answer properly if the answers are not valid. ALWAYS keep the answer in finnish language.
         `;
 
         const chatCompletion = await openai.chat.completions.create({

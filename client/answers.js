@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    const aiResponseElement = document.getElementById('aiResponse');
+
     // Hae tallennetut vastaukset
     const answer1 = localStorage.getItem('answer1');
     const answer2 = localStorage.getItem('answer2');
@@ -9,6 +12,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const combinedPrompt = `${answer1}\n${answer2}\n${answer3}\n${answer4}`;
 
     if (combinedPrompt.trim() !== '') {
+        // Näytä loading-indikaattori
+        loadingIndicator.style.display = 'block';
+
         // Lähetä pyyntö backendiin
         try {
             const response = await fetch('http://localhost:5000', {
@@ -21,16 +27,23 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const responseData = await response.json();
                 const answer = responseData.bot.trim();
                 // Näytä vastaus kirjain kerrallaan
-                const aiResponseElement = document.getElementById('aiResponse');
-                
+                aiResponseElement.innerText = answer;
+                 // Show the button after displaying the response
+                document.getElementById('resetButton').style.display = 'block';
+                // Piilota loading-indikaattori
+                loadingIndicator.style.display = 'none';
             } else {
                 console.error('Error from server:', await response.text());
             }
         } catch (error) {
             console.error('Error:', error);
+            // Piilota loading-indikaattori myös virhetilanteessa
+            loadingIndicator.style.display = 'none';
         }
     } else {
-        document.getElementById('aiResponse').innerText = 'No prompt provided.';
+        // Piilota loading-indikaattori, koska ei ole promptia
+        loadingIndicator.style.display = 'none';
+        aiResponseElement.innerText = 'No prompt provided.';
     }
 });
 
