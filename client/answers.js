@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const answer = responseData.bot.trim();
                 // Näytä vastaus kirjain kerrallaan
                 aiResponseElement.innerText = answer;
-                 // Show the button after displaying the response
+                // Button esiin vastauksen jälkeen
                 document.getElementById('resetButton').style.display = 'block';
                 // Piilota loading-indikaattori
                 loadingIndicator.style.display = 'none';

@@ -1,58 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Alegreya Sans", sans-serif;
-
-}
-
 body {
-  background: #ffffff;
-  color: #fdf8f8;
-
-
+  background-color: #010427;
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
-
-
-
-
-
-
-
-
 
 button {
-  padding: 12px 20px;
-  background-color: #4CAF50;
+  padding: 10px 20px;
+  background-color: #dec04B;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
-  position: fixed;
-  /* Fixed position relative to the viewport */
-  bottom: 20px;
-  /* Position 20px from the bottom */
-  left: 20px;
-  /* Position 20px from the right */
-  z-index: 1000;
-  /* Ensure it's above other elements */
+  display: none;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #25274f;
 }
 
 .top-bar {
   width: 100%;
-  background-color: #010427;
   padding: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 5px solid #dec04B;
 }
 
 .logo {
@@ -60,7 +34,6 @@ button:hover {
   width: auto;
 }
 
-/* Responsive Design for Smaller Screens */
 @media (max-width: 600px) {
 
   .wrapper,
@@ -69,118 +42,96 @@ button:hover {
   }
 }
 
-
-
-
-
-
-
-/* Additional Responsive Design for Smaller Screens */
 @media (max-width: 600px) {
   #resetButton {
     bottom: 10px;
-    /* Closer to edge on smaller screens */
     right: 10px;
   }
 }
 
-
-
-
-
 .answersContainer {
-  width: 80%;
-  /* Adjust the width as needed */
-  max-width: 800px;
-  /* Maximum width */
+  width: 100%;
+  max-width: 370px;
   margin: 20px auto;
-  /* Centers the container */
   padding: 15px;
-  /* Padding inside the container */
   background-color: #f9f9f9;
-  /* Light background color */
   border: 1px solid #ccc;
-  /* Border for the container */
   border-radius: 15px;
-  /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Optional: Adds a subtle shadow */
   overflow-y: auto;
-  /* Adds scroll for overflow */
-  height: 900px;
+  height: 630px;
   display: flex;
   flex-direction: column;
-
-
-
-
-
 }
 
 .bot-name {
   font-size: 14px;
-  /* Choose an appropriate font size */
   font-weight: bold;
   color: #000000;
-  /* Text color */
-
-
 }
-
-
 
 #aiResponse {
   padding: 10px;
   margin: 10px 0;
   background-color: #e8e8e8;
-  /* Light background for visibility */
   border-radius: 10px;
-  /* Rounded corners */
   font-size: 18px;
-  /* Slightly larger font for readability */
   color: #333;
-  /* Darker text for contrast */
   word-wrap: break-word;
-  /* Ensure long words do not overflow */
   max-width: 100%;
-  /* Full width of its parent container */
   height: auto;
-  /* Height to fit content */
-
-
-
 }
-
 
 .profile {
   display: flex;
-  /* Aligns children (image and name) in a row */
   align-items: center;
-  /* Centers them vertically */
   margin-top: 30px;
-  /* Adjust as needed */
 }
-
-
-
-
-
-
-
 
 .profile img {
   width: 66px;
-  /* Adjust size as needed */
-
   height: 66px;
-  /* Adjust size as needed */
-
   object-fit: contain;
-  /* Keeps the aspect ratio of the image */
-
   border-radius: 30%;
-
-  /* Makes the image circular */
   margin-right: 10px;
-  /* Space between the image and the name */
+}
+
+#loadingIndicator {
+  display: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+#loadingIndicator span {
+  display: inline-block;
+}
+
+#loadingIndicator .dots::after {
+  content: "";
+  animation: loadingDots 1.5s infinite;
+  white-space: nowrap;
+}
+
+@keyframes loadingDots {
+
+  0%,
+  20% {
+    content: ".";
+  }
+
+  40% {
+    content: "..";
+  }
+
+  60% {
+    content: "...";
+  }
+
+  80%,
+  100% {
+    content: "";
+  }
 }
