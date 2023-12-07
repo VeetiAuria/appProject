@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <div class="loader"></div>
-    <header>
+  <div class="loader"></div>
+  <header>
     <div class="top-bar">
       <img src="logo_sovellus_valmis.png" alt="Logo" class="logo">
     </div>
@@ -18,27 +18,28 @@
 
   <div id="customModal" class="modal">
     <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <p id="modalText">Ole hyvä ja täytä kaikki kohdat.</p>
+      <span class="close-button">&times;</span>
+      <p id="modalText">Ole hyvä ja täytä kaikki kohdat.</p>
     </div>
-</div>
+  </div>
 
   <h1>Vastaa kysymyksiin</h1>
   <p class="instructions">
-    Lomakkeessa odotetaan käyttäjän vastaavan neljään antamaani kysymykseen. Tämän jälkeen annetaan vastaus käyttäjän antamien vastausten perusteella.
+    Lomakkeessa odotetaan käyttäjän vastaavan neljään antamaani kysymykseen. Tämän jälkeen annetaan vastaus käyttäjän
+    antamien vastausten perusteella.
   </p>
   <form id="answerForm">
     <label for="answer1">Millaisissa asioissa olet taitava?</label>
-    <input type="text" maxlength="100" id="answer1" required ><br>
+    <input type="text" maxlength="100" id="answer1" required><br>
 
-   <label for="answer2">Mitkä ovat kiinnostuksen kohteesi?</label>
+    <label for="answer2">Mitkä ovat kiinnostuksen kohteesi?</label>
     <input type="text" maxlength="100" id="answer2" required><br>
 
     <label for="answer3">Mikä on koulutustaustasi ja/tai erikoisosaamisesi?</label>
     <input type="text" maxlength="100" id="answer3" required><br>
 
-     <label for="answer4">Onko sinulla aijempaa työkokemusta?</label>
-    <input type="text" maxlength="100" id="answer4" required><br>  
+    <label for="answer4">Onko sinulla aijempaa työkokemusta?</label>
+    <input type="text" maxlength="100" id="answer4" required><br>
 
     <button type="button" onclick="submitAnswers()">Lähetä</button>
   </form>
@@ -46,4 +47,3 @@
 </body>
 
 </html>
-
