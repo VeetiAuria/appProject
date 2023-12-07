@@ -1,12 +1,18 @@
+
 body {
     background-color: #010427;
-    background-image: url('tausta_sovellukseen2.png');
+    /* Sets the background color to purple */
+    background-image: url('/client/Kuvat/tausta_sovellukseen2.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
     color: white;
+    /* Sets the text color to white for better visibility */
     font-family: Arial, sans-serif;
+    /* Sets a default font */
     text-align: center;
+    /* Centers the content */
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,19 +21,25 @@ body {
     height: 100vh;
 }
 
+/* Styling for the logo */
 #logo {
     width: 180px;
     height: 180px;
+    /* Adjust as needed */
     margin: 0 auto;
+    /* Centers the logo */
 }
 
+/* Styling for the text under the logo */
 .text-below-logo {
     margin-top: 20px;
     font-size: 1.5em;
     background-color: rgba(0, 0, 0, 0.87);
     padding: 5px;
     border-radius: 5px;
-    display: inline-block;
-    margin: 10px auto;
-    text-align: center;
+    display: inline-block; /* Changed to inline-block */
+    margin: 10px auto; /* Centering horizontally */
+    text-align: center; /* Ensure text inside is centered */
 }
+
+
